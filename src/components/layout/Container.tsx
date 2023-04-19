@@ -1,0 +1,68 @@
+import Head from 'next/head';
+import Link from 'next/link';
+import React from 'react';
+
+export const Container = ({ children }) => {
+  return (
+    <>
+      <Head>
+        <title>{'Platzi Commerce'}</title>
+      </Head>
+      <header className="bg-white">
+        <div className="p-1 bg-slate-800 text-center">
+          <p className="text-slate-100">
+            | Compra 100% segura | - Envios gratis por compras superiores a 40
+            USD
+          </p>
+        </div>
+        <div className="m-auto container">
+          <div className="p-7 flex justify justify-between items-center">
+            <button className="bi bi-search text-xl" />
+            <span className="font-semibold select-none">Platzi Commerce</span>
+            <div className="flex gap-3">
+              <button className="bi bi-bag text-xl" />
+              <button className="bi bi-person-circle text-xl" />
+            </div>
+          </div>
+          <nav className="pb-5 flex justify-center">
+            <ul className="flex gap-5">
+              <li>
+                <Link href={'/?category=polos'}>Polos</Link>
+              </li>
+              <li>
+                <Link href={'/?category=camisas'}>Camisas</Link>
+              </li>
+              <li>
+                {' '}
+                <Link href={'/?category=camisetas'}>Camisetas</Link>
+              </li>
+              <li>
+                {' '}
+                <Link href={'/?category=jeans'}>Jeans</Link>
+              </li>
+              <li>
+                {' '}
+                <Link href={'/?category=pantalones'}>Pantalones</Link>
+              </li>
+              <li>
+                {' '}
+                <Link href={'/?category=buzos-y-chaquetas'}>
+                  Buzos y Chaquetas
+                </Link>
+              </li>
+              <li>
+                {' '}
+                <Link href={'/?category=jogger'}>Jogger</Link>
+              </li>
+              <li>
+                {' '}
+                <Link href={'/?category=bermudas'}>Bermudas</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+      <main>{children}</main>
+    </>
+  );
+};
