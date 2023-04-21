@@ -30,7 +30,7 @@ export const MenSection = () => {
                 fullWidth(data?.length, i) ? 'w-full' : 'w-full lg:w-2/4'
               } p-5 h-80 flex items-center bg-cover bg-no-repeat bg-center`}
               style={{
-                backgroundImage: `url('${item?.background_img?.imgix_url}')`,
+                backgroundImage: `url('${item?.background_img?.imgix_url}?fit=crop')`,
               }}
             >
               <div className='m-auto container'>
