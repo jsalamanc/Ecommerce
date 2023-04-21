@@ -2,6 +2,10 @@ import { useEffect } from 'react';
 import { setData } from '@/redux/reducer/GeneralConfig';
 import { useDispatch } from 'react-redux';
 
+/**
+ * Usage:
+ * useDataFetch('/api/url_send);
+ */
 export default async (urlSet: string) => {
   const dispatch = useDispatch();
   useEffect(() => {
