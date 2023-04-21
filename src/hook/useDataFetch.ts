@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
 import { setData } from '@/redux/reducer/GeneralConfig';
 import { useDispatch } from 'react-redux';
+import { useRouter } from 'next/router';
 
 export default async (urlSet: string) => {
   const dispatch = useDispatch();
-
+  const router = useRouter();
   useEffect(() => {
     try {
+      // eslint-disable-next-line no-console
+      console.log(router.asPath);
       fetch(`${process.env.NEXT_URL_PAGE}/api${urlSet}`)
         .then((res) => {
           if (!res.ok) {
@@ -27,5 +30,5 @@ export default async (urlSet: string) => {
         message: 'Error!',
       });
     }
-  }, [urlSet, dispatch]);
+  }, [urlSet, dispatch, router]);
 };
