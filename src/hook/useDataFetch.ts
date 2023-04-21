@@ -8,7 +8,6 @@ export default async (urlSet: string) => {
     try {
       const domainName = window.location.hostname;
       // eslint-disable-next-line no-console
-      console.log(domainName);
       fetch(`https://${domainName}${urlSet}`)
         .then((res) => {
           if (!res.ok) {
