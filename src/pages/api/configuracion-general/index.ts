@@ -1,6 +1,9 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import { getPageBySlug } from '@/lib/provider/cosmic';
-import { CleanDataProps, IndexDataProps } from '@/types/api/Home.types';
+import {
+  GeneralConfigProps,
+  CleanDataProps,
+} from '@/types/api/configuracion-general/GeneralConfig.types';
 import type { NextApiRequest, NextApiResponse } from 'next';
 
 export default async function handler(
@@ -10,22 +13,21 @@ export default async function handler(
   switch (req.method) {
     case 'GET':
       try {
-        const data: IndexDataProps =
+        const data: GeneralConfigProps =
           (await getPageBySlug(
-            'home',
+            'configuracion-general',
             `
-          slug,
           metadata,
         `,
             {}
           )) || {};
-        const cleanData: CleanDataProps = {
+        const cleanData = {
           ...data.metadata,
         };
         res.status(200).json(cleanData);
       } catch (error) {
         // eslint-disable-next-line no-console
-        console.error(error);
+        console.log(error);
       }
       break;
 

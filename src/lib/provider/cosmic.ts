@@ -3,7 +3,7 @@ import Cosmic from 'cosmicjs';
 const api = Cosmic();
 const bucket = api.bucket({
   slug: process.env.COSMIC_SLUG,
-  read_key: process.env.READ_KEY
+  read_key: process.env.READ_KEY,
 });
 
 export function getPageBySlug(slug: string, props: string, others: any) {
@@ -11,10 +11,10 @@ export function getPageBySlug(slug: string, props: string, others: any) {
     bucket
       .getObjects({
         query: {
-          slug
+          slug,
         },
         props,
-        ...others
+        ...others,
       })
       .then((res: any) => {
         resolve(res.objects[0]);
