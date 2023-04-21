@@ -45,7 +45,7 @@ export default function Home(props: IndexProps) {
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getServerSideProps(context: any) {
   try {
-    const res = await fetch('http://localhost:3000/api');
+    const res = await fetch(`https://${context.req.headers.host}/api`);
     const data = await res.json();
     return {
       props: {
@@ -54,7 +54,7 @@ export async function getServerSideProps(context: any) {
     };
   } catch (error) {
     // eslint-disable-next-line no-console
-    console.log(error);
+    console.log('ERROR: ', error);
     return {
       props: {
         message: 'Error!',
