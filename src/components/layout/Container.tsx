@@ -21,9 +21,10 @@ export const Container = ({ children }: ContainerProps) => {
       </Head>
       <header className='bg-white'>
         {data?.is_active && (
-          <div className='p-1 bg-slate-800 text-center text-slate-100'>
-            {data.message}
-          </div>
+          <div
+            className='p-1 bg-slate-800 text-center text-slate-100'
+            dangerouslySetInnerHTML={{ __html: data.message || '' }}
+          />
         )}
         <div className='m-auto container'>
           <div className='p-7 flex justify justify-between items-center'>
