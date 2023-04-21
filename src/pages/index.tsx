@@ -6,6 +6,7 @@ import { useDispatch } from 'react-redux';
 import { MenSection } from '@/components/views/home/MenSection';
 import { HeroSection } from '@/components/views/home/HeroSection';
 import { Newsletter } from '@/components/views/home/Newsletter';
+import { GetServerSideProps } from 'next';
 
 export default function Home(props: IndexProps) {
   const [data, setDataset] = useState<IndexProps>(undefined);
@@ -43,9 +44,8 @@ export default function Home(props: IndexProps) {
   );
 }
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-export async function getServerSideProps(context: any) {
-  const domainName = context.req.headers.host.includes('localhost')
+export const getServerSideProps: GetServerSideProps = async (context) => {
+  const domainName = context?.req?.headers?.host?.includes('localhost')
     ? `http://${context.req.headers.host}`
     : `https://${context.req.headers.host}`;
   try {
@@ -65,4 +65,4 @@ export async function getServerSideProps(context: any) {
       },
     };
   }
-}
+};
