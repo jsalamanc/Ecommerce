@@ -10,7 +10,7 @@ type ContainerProps = {
   children: JSX.Element | JSX.Element[];
 };
 export const Container = ({ children }: ContainerProps) => {
-  useDataFetch('/configuracion-general');
+  useDataFetch('/api/configuracion-general');
   const data = useSelector(
     (state: RootState) => state?.generalConfig?.general_notification
   );

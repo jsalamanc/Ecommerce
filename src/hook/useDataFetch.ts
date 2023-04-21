@@ -9,7 +9,7 @@ export default async (urlSet: string) => {
       const domainName = window.location.hostname;
       // eslint-disable-next-line no-console
       console.log(domainName);
-      fetch(`https://${domainName}/api${urlSet}`)
+      fetch(`https://${domainName}${urlSet}`)
         .then((res) => {
           if (!res.ok) {
             throw new Error('La respuesta de red no fue exitosa');
