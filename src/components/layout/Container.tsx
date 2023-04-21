@@ -5,6 +5,7 @@ import useDataFetch from '@/hook/useDataFetch';
 import { WhatsappBtn } from '@/components/layout/WhatsappBtn';
 import type { RootState } from '@/redux/store';
 import { useSelector } from 'react-redux';
+import { Footer } from '@/components/layout/Footer';
 
 type ContainerProps = {
   children: JSX.Element | JSX.Element[];
@@ -69,6 +70,7 @@ export const Container = ({ children }: ContainerProps) => {
       </header>
       <main>{children}</main>
       <WhatsappBtn />
+      <Footer />
     </>
   );
 };
