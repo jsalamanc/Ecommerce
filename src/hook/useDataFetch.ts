@@ -6,9 +6,11 @@ export default async (urlSet: string) => {
   const dispatch = useDispatch();
   useEffect(() => {
     try {
-      const domainName = window.location.hostname;
+      const domainName = window.location.hostname.includes('localhost')
+        ? `http://localhost:${window.location.port}`
+        : `https://${window.location.hostname}`;
       // eslint-disable-next-line no-console
-      fetch(`https://${domainName}${urlSet}`)
+      fetch(`${domainName}${urlSet}`)
         .then((res) => {
           if (!res.ok) {
             throw new Error('La respuesta de red no fue exitosa');
