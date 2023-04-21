@@ -9,16 +9,17 @@ import { Newsletter } from '@/components/views/home/Newsletter';
 
 export default function Home(props: IndexProps) {
   const [data, setDataset] = useState<IndexProps>(undefined);
+
   const dispatch = useDispatch();
   useEffect(() => {
     setDataset(props);
     dispatch(setData(data));
   }, [props, data, dispatch]);
   if (data?.message === 'Error!') {
-    <div>Error Interno!</div>;
+    return <div>Error Interno!</div>;
   }
   if (!data) {
-    <div>cargando...</div>;
+    return <div>cargando...</div>;
   }
   return (
     <Container>
@@ -44,8 +45,11 @@ export default function Home(props: IndexProps) {
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 export async function getServerSideProps(context: any) {
+  const domainName = context.req.headers.host.includes('localhost')
+    ? `http://${context.req.headers.host}`
+    : `https://${context.req.headers.host}`;
   try {
-    const res = await fetch(`https://${context.req.headers.host}/api`);
+    const res = await fetch(`${domainName}/api`);
     const data = await res.json();
     return {
       props: {
