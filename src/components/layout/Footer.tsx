@@ -77,17 +77,31 @@ export const Footer = () => (
         </span>
         <div className='mt-3 flex gap-3 text-xl'>
           <ul className='flex flex-col gap-2'>
-            <li className='text-sm text-white'>
+            <li className='cursor-pointer text-sm text-white'>
               Derecho de Retracto - Ley 1480 art. 47
             </li>
-            <li className='text-sm text-white'>Reversión del Pago</li>
-            <li className='text-sm text-white'>Solicita una garantía</li>
-            <li className='text-sm text-white'>Solicita un cambio</li>
-            <li className='text-sm text-white'>¿Cómo comprar?</li>
-            <li className='text-sm text-white'>Preguntas Frecuentes</li>
-            <li className='text-sm text-white'>PQR´s - Tratamiento de Datos</li>
-            <li className='text-sm text-white'>PQR´s - Ventas</li>
-            <li className='text-sm text-white'>Contáctenos</li>
+            <li className='cursor-pointer text-sm text-white'>
+              Reversión del Pago
+            </li>
+            <li className='cursor-pointer text-sm text-white'>
+              Solicita una garantía
+            </li>
+            <li className='cursor-pointer text-sm text-white'>
+              Solicita un cambio
+            </li>
+            <li className='cursor-pointer text-sm text-white'>
+              ¿Cómo comprar?
+            </li>
+            <li className='cursor-pointer text-sm text-white'>
+              Preguntas Frecuentes
+            </li>
+            <li className='cursor-pointer text-sm text-white'>
+              PQR´s - Tratamiento de Datos
+            </li>
+            <li className='cursor-pointer text-sm text-white'>
+              PQR´s - Ventas
+            </li>
+            <li className='cursor-pointer text-sm text-white'>Contáctenos</li>
           </ul>
         </div>
       </div>
@@ -97,31 +111,39 @@ export const Footer = () => (
         </span>
         <div className='mt-3 text-xl'>
           <ul className='flex flex-col gap-2'>
-            <li className='text-sm font-light text-white'>
+            <li className='cursor-pointer text-sm font-light text-white'>
               Camisetas tipo polo
             </li>
-            <li className='text-sm font-light text-white'>
+            <li className='cursor-pointer text-sm font-light text-white'>
               Camisas para hombre
             </li>
-            <li className='text-sm font-light text-white'>
+            <li className='cursor-pointer text-sm font-light text-white'>
               Camisetas para hombre
             </li>
-            <li className='text-sm font-light text-white'>Jeans para hombre</li>
-            <li className='text-sm font-light text-white'>
+            <li className='cursor-pointer text-sm font-light text-white'>
+              Jeans para hombre
+            </li>
+            <li className='cursor-pointer text-sm font-light text-white'>
               Pantalones para hombre
             </li>
-            <li className='text-sm font-light text-white'>
+            <li className='cursor-pointer text-sm font-light text-white'>
               Joggers para hombre
             </li>
-            <li className='text-sm font-light text-white'>
+            <li className='cursor-pointer text-sm font-light text-white'>
               Bermudas para hombre
             </li>
-            <li className='text-sm font-light text-white'>Correas y reatas</li>
-            <li className='text-sm font-light text-white'>Gorras polo</li>
-            <li className='text-sm font-light text-white'>
+            <li className='cursor-pointer text-sm font-light text-white'>
+              Correas y reatas
+            </li>
+            <li className='cursor-pointer text-sm font-light text-white'>
+              Gorras polo
+            </li>
+            <li className='cursor-pointer text-sm font-light text-white'>
               Chaquetas y chalecos
             </li>
-            <li className='text-sm font-light text-white'>Boxer para hombre</li>
+            <li className='cursor-pointer text-sm font-light text-white'>
+              Boxer para hombre
+            </li>
           </ul>
         </div>
       </div>
